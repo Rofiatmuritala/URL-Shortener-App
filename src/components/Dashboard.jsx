@@ -31,7 +31,7 @@ import {
 import { Link } from "react-router-dom";
 
 const LinkItems = [
-  { name: "Create New", to: "/create", icon: FiHome },
+  { name: "Create New", to: "/create" },
   { name: "Home", to: "/home", icon: FiHome },
   { name: "Links", to: "/link", icon: FiTrendingUp },
   { name: "Logout", to: "/", icon: FiCompass },
