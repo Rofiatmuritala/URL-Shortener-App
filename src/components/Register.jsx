@@ -14,10 +14,15 @@ export const Register = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const userCredentials = { email: email, password: password };
+    const userCredentials = {
+      fullName: fullName,
+      userName: userName,
+      email: email,
+      password: password,
+    };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/users/login`, {
+      const response = await fetch(`http://localhost:4000/api/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +33,10 @@ export const Register = () => {
       const data = await response.json();
       console.log(data);
 
-      navigate("/dashboard");
+      if (data && data.token) {
+        localStorage.setItem("token", data.token);
+        navigate("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
