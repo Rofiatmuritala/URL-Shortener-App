@@ -1,5 +1,7 @@
+import { QRCodeSVG } from "qrcode.react";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { TbClipboardCopy } from "react-icons/tb";
 
 export const Links = () => {
   const [linkeds, setLinkeds] = useState(null);
@@ -43,46 +45,50 @@ export const Links = () => {
       {/* <div className="flex flex-col gap-10 text-xl bg-gray-300"> */}
       {linkeds !== null &&
         (linkeds.length === 0 ? (
-          <div className="flex justify-center items-center font-bold h-96">
+          <div className="flex flex-col p-10 text-2xl  bg-white rounded-md border-gray-100 border-solid justify-center items-center font-bold h-full
+
+          ">
             Links
           </div>
         ) : (
-          <div className="flex flex-col p-10 relative text-2xl m-10 border-r-inherit  bg-white rounded-lg border-gray-100  border-solid">
+          <div className="flex flex-col md:w-full ">
             {linkeds.map((linked) => (
-              <div key={linked._id} className="flex flex-row gap-6">
+              <div key={linked._id} className="flex flex-row gap-10">
                 <div className="flex flex-1 flex-row gap-6">
                   <label></label>
-                  <div className="flex align-center justify-items-center border-l-gray-300 border-solid w-20 ">
-                    <img className="border border-r-8 w-12 h-12 "></img>
+                  <div className="flex align-center justify-items-center  w-10  md:w-20">
+                    <QRCodeSVG className="" value={linked.shortLink} />
                   </div>
 
-                  <div className="flex flex-col flex-1 gap-3">
-                    <h3 href="google.com" className="">
+                  <div className="flex flex-col flex-1 gap-3 ">
+                    <h3 href="google.com" className="text-xs md:text-2xl font-bold">
                       <a>{linked.name}</a>
                     </h3>
                     <div className="flex flex-row gap-10">
                       <div className="flex flex-col flex-1 gap-3">
+                        
                         <a
-                          className="text-blue-500 font-bold text-2xl break-all overflow-hidden cursor-pointer"
-                          href="short url"
-                        >
-                          {linked.shortLink}
+                          className="text-blue-500 font-bold text-xs cursor-pointer md:text-2xl"
+                          href={linked.shortLink}
+                          target="_blank"
+                        > 
+                          {linked.shortLink} <TbClipboardCopy className="inline-block text-black m-2 pb-2 cursor-pointer"/>
                         </a>
                         <a
-                          className="text-black text-2xl cursor-pointer overflow-hidden break-all"
+                          className="text-black text-xs bold cursor-pointer overflow-hidden break-all md:text-2xl"
                           href="long url"
                         >
                           {linked.actualLink}
                         </a>
                         <div className="flex flex-row flex-wrap mt-2 mb-14 text-xl text-black font-medium gap-6">
-                          <div className="flex font-medium text-xl rounded-lg  bg-slate-200 text-gray-400 items-center">
-                            <span className="overflow-hidden break-all rounded-lg p-1 text-gray-600 text-xl font-medium max-w-3xl">
+                          <div className="flex font-medium  rounded-lg  bg-slate-200  items-center">
+                            <span className="overflow-hidden  text-gray-600 text-xs font-medium md:text-xl  ">
                               clicks={linked.clicks}
                             </span>
                           </div>
-                          <div className="flex font-medium text-xl text-black items-center">
-                            <span className="overflow-hidden break-all text-black text-xl font-medium max-w-3xl">
-                              Date:{linked.updatedAt}
+                          <div className="flex flex-1 font-medium   items-center">
+                            <span className="overflow-hidden break-all text-black text-xs bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl">
+                              {linked.updatedAt}
                             </span>
                           </div>
                           {/* <div className="flex font-medium text-xl text-black items-center">
