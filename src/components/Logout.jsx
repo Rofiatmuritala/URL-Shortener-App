@@ -12,12 +12,12 @@ export const Logout = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("/logout", {
+      await fetch("http://localhost:4000/logout", {
         method: "GET",
-        credentials: "same-origin", // or 'include' for cross-origin requests with cookies
       });
+      localStorage.removeItem("token")
       // Perform logout actions such as redirecting to the home page
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.error("Logout error:", error);
       // Handle logout error, e.g., show an error message to the user

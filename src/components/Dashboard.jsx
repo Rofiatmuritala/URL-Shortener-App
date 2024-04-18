@@ -29,6 +29,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import OnlyLoginUsersRoute from "./LoginUserRoute";
 
 const LinkItems = [
   { name: "Create New", to: "/create" },
@@ -191,6 +192,7 @@ const Dashboard = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
+    <OnlyLoginUsersRoute>
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
         onClose={() => onClose}
@@ -214,6 +216,7 @@ const Dashboard = ({ children }) => {
         <div className="mx-auto w-4/5">{children}</div>
       </Box>
     </Box>
+    </OnlyLoginUsersRoute>
   );
 };
 

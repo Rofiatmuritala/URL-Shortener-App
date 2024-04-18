@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [email, setEmail] = useState(null);
@@ -109,12 +109,12 @@ export const Login = () => {
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Do not have an account?{" "}
-                <a
-                  href="#"
+                <Link
+                  to={'user/register'}
                   class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Register here
-                </a>
+                </Link>
               </p>
             </form>
           </div>

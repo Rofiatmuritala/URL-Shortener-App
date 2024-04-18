@@ -1,4 +1,5 @@
 import React from "react";
+import ColorModeToggle from "./Pricing";
 
 export const Navbar = () => {
   return (
@@ -36,6 +37,13 @@ export const Navbar = () => {
               href="#"
             >
               Why choose us
+            </a>
+            <a
+              aria-current="page"
+              class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              href="#"
+            >
+              <ColorModeToggle/>
             </a>
             <a
               class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
