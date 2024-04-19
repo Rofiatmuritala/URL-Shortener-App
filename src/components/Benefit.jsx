@@ -25,13 +25,13 @@ export default function Benefit() {
   return (
     <Box p={4}>
       <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-        <Heading fontSize={"3xl"}>Benefits</Heading>
+        <Heading fontSize={"3xl"} mt={10}>Benefits</Heading>
         <Text color={"gray.600"} fontSize={"xl"}>
           These are the benefits of us kia.ly
         </Text>
       </Stack>
 
-      <Container maxW={"6xl"} mt={10}>
+      <Container maxW={"6xl"} mt={10} pb={15}>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
           {features.map((feature) => (
             <HStack key={feature.id} align={"top"}>

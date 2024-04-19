@@ -33,17 +33,16 @@ export const Register = () => {
       const data = await response.json();
       console.log(data);
 
-      if (data && data.token) {
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard");
-      }
+      localStorage.setItem("token", data.token);
+
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <section class="bg-gray-50 dark:bg-gray-900">
+    <section class="">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
           href="#"

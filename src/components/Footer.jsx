@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer = () => {
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
       />
 
-      <footer class="relative bg-blueGray-200 pt-8 pb-6">
+      <footer class="relative pt-8 pb-6 border-t border-gray-200">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap text-left lg:text-left">
             <div class="w-full lg:w-6/12 px-4">
@@ -59,25 +60,25 @@ export const Footer = () => {
                     <li>
                       <a
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=njs-profile"
+                        to={"/user/register"}
                       >
-                        About Us
+                        Scan it
                       </a>
+                    </li>
+                    <li>
+                      <Link
+                        class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        to={"/user/register"}
+                      >
+                        Make it short
+                      </Link>
                     </li>
                     <li>
                       <a
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=njs-profile"
+                        to={"/user/register"}
                       >
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=njs-profile"
-                      >
-                        Github
+                        Kialy Documentation API
                       </a>
                     </li>
                     <li>
@@ -85,7 +86,7 @@ export const Footer = () => {
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
                         href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
                       >
-                        Free Products
+                        Newsletter
                       </a>
                     </li>
                   </ul>
@@ -100,7 +101,7 @@ export const Footer = () => {
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
                         href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
                       >
-                        MIT License
+                        KIA License
                       </a>
                     </li>
                     <li>
@@ -120,12 +121,12 @@ export const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <a
+                      <Link
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=njs-profile"
+                        to={"/contact"}
                       >
                         Contact Us
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -136,18 +137,18 @@ export const Footer = () => {
           <div class="flex flex-wrap items-center md:justify-between justify-center">
             <div class="w-full md:w-4/12 px-4 mx-auto text-center">
               <div class="text-sm text-blueGray-500 font-semibold py-1">
-                Copyright © <span id="get-current-year">2021</span>
+                Copyright © <span id="get-current-year">2024</span>
                 <a
                   href="https://www.creative-tim.com/product/notus-js"
                   class="text-blueGray-500 hover:text-gray-800"
                   target="_blank"
                 />{" "}
-                Notus JS by
+                KIAly by
                 <a
                   href="https://www.creative-tim.com?ref=njs-profile"
                   class="text-blueGray-500 hover:text-blueGray-800"
                 >
-                  Creative Tim
+                  Creative Roffy
                 </a>
                 .
               </div>

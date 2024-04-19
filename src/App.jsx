@@ -13,6 +13,7 @@ import { HomePage } from "./pages/HomePage";
 import { LandingPage } from "./pages/LandingPage";
 import { LogoutPage } from "./pages/LogoutPage";
 import { Pricing } from "./components/Pricing";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/link" element={<LinkPage />} />
           <Route path="/home" element={<LandingPage />} />
           <Route path="/create" element={<CreatePage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/user/login" element={<UserPage />} />
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="/user/register" element={<RegisterPage />} />

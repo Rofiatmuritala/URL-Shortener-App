@@ -10,20 +10,20 @@ export const Hero = () => {
         <p class="mb-8 leading-relaxed">Here's where I put my thoughts</p>
         <div class="flex justify-center">
           <a
-            href=""
+            href="/user/register"
             class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
           >
-            Read
+            Make it short
           </a>
           <a
             href=""
             class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
           >
-            About me
+            Scan it
           </a>
         </div>
       </div>
-      <div class="lg:max-w-lg lg:w-full pt-4 md:w-1/2 w-5/6">
+      <div class="hidden lg:max-w-lg lg:w-full pt-4 md:w-1/2 w-5/6">
         {/* component  */}
         <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
           <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>

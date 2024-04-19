@@ -1,11 +1,12 @@
 import React from "react";
 import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
 
 export const Pricing = () => {
   return (
-    <div>
+    <>
       {/* component  */}
-      <div class="antialiased w-full h-full bg-black text-gray-400 font-inter p-10">
+      {/* <div class="antialiased w-full h-full bg-black text-gray-400 font-inter p-10">
         <div class="container px-4 mx-auto">
           <div>
             <div id="title" class="text-center my-10">
@@ -162,7 +163,7 @@ export const Pricing = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <header class="max-w-6xl mx-auto py-8 px-5 flex justify-between lg:px-8">
         {/* <a href="#/" class="text-2xl text-gray-900 font-semibold">
@@ -332,17 +333,12 @@ export const Pricing = () => {
             </a>
           </div>
         </div>
-      </main>
-    </div>
-  );
-};
+      </main>  
 
-//  component
-{
-  /* <div class="bg-gradient-to-b from-pink-100 to-purple-200">
+      <div class="">
     <div class="container m-auto px-6 py-20 md:px-12 lg:px-20">
         <div class="m-auto text-center lg:w-8/12 xl:w-7/12">
-            <h2 class="text-2xl text-pink-900 font-bold md:text-4xl">A Tailus Blocks subscription gives you access to our components and more.</h2>
+            <h2 class="text-2xl  text-indigo-600 font-bold md:text-4xl">A Tailus Blocks subscription gives you access to our components and more.</h2>
         </div>
         <div class="mt-12 m-auto -space-y-4 items-center justify-center md:flex md:space-y-0 md:-space-x-4 xl:w-10/12">
             <div class="relative z-10 -mx-4 group md:w-6/12 md:mx-0 lg:w-5/12">
@@ -415,14 +411,23 @@ export const Pricing = () => {
                     </ul>
                     <p class="text-gray-700">Team can be any size, and you can add or switch members as needed. Companies using our platform include:</p>
                     <div class="mt-6 flex justify-between gap-6">
-                        <img class="w-16 lg:w-24" src="https://tailus.io/sources/blocks/organization/preview/images/clients/airbnb.svg" loading="lazy" alt="airbnb">
-                        <img class="w-8 lg:w-16" src="https://tailus.io/sources/blocks/organization/preview/images/clients/bissell.svg" loading="lazy" alt="bissell">
-                        <img class="w-6 lg:w-12" src="https://tailus.io/sources/blocks/organization/preview/images/clients/ge.svg" loading="lazy" alt="ge">
-                        <img class="w-20 lg:w-28" src="https://tailus.io/sources/blocks/organization/preview/images/clients/microsoft.svg" loading="lazy" alt="microsoft">
+                        <img class="w-16 lg:w-24" src="https://tailus.io/sources/blocks/organization/preview/images/clients/airbnb.svg" loading="lazy" alt="airbnb"/>
+                        <img class="w-8 lg:w-16" src="https://tailus.io/sources/blocks/organization/preview/images/clients/bissell.svg" loading="lazy" alt="bissell"/>
+                        <img class="w-6 lg:w-12" src="https://tailus.io/sources/blocks/organization/preview/images/clients/ge.svg" loading="lazy" alt="ge"/>
+                        <img class="w-20 lg:w-28" src="https://tailus.io/sources/blocks/organization/preview/images/clients/microsoft.svg" loading="lazy" alt="microsoft"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> */
-}
+</div> 
+
+<Footer/>
+
+    </>
+  );
+};
+
+//  component
+
+   

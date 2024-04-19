@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    <header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow mt-5 backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
       <div class="px-4">
         <div class="flex items-center justify-between">
           <div class="flex shrink-0">
             <Link aria-current="page" class="flex items-center" to={"/"}>
-              <img
+              <h1 className="text-blue-400 text-4xl">K</h1>
+              {/* <img
                 class="h-7 w-auto"
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
                 alt=""
-              />
+              /> */}
               <p class="sr-only">Website Title</p>
             </Link>
           </div>
@@ -49,7 +50,7 @@ export const Navbar = () => {
           </div>
           <div class="flex items-center justify-end gap-3">
             <Link
-              class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
+              class=" items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
               to={"/user/register"}
             >
               Sign in
