@@ -12,6 +12,7 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { HomePage } from "./pages/HomePage";
 import { LandingPage } from "./pages/LandingPage";
 import { LogoutPage } from "./pages/LogoutPage";
+import { Pricing } from "./components/Pricing";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/link" element={<LinkPage />} />
           <Route path="/home" element={<LandingPage />} />

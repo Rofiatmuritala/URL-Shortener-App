@@ -1,5 +1,6 @@
 import React from "react";
-import ColorModeToggle from "./Pricing";
+import ColorModeToggle from "./Colortoggle";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -7,14 +8,14 @@ export const Navbar = () => {
       <div class="px-4">
         <div class="flex items-center justify-between">
           <div class="flex shrink-0">
-            <a aria-current="page" class="flex items-center" href="/">
+            <Link aria-current="page" class="flex items-center" to={"/"}>
               <img
                 class="h-7 w-auto"
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
                 alt=""
               />
               <p class="sr-only">Website Title</p>
-            </a>
+            </Link>
           </div>
           <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
             <a
@@ -31,34 +32,28 @@ export const Navbar = () => {
             >
               How it works
             </a>
-            <a
-              aria-current="page"
+
+            <Link
               class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-              href="#"
+              to={"/pricing"}
             >
               Why choose us
-            </a>
+            </Link>
             <a
               aria-current="page"
               class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
               href="#"
             >
-              <ColorModeToggle/>
-            </a>
-            <a
-              class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-              href="#"
-            >
-              Pricing
+              <ColorModeToggle />
             </a>
           </div>
           <div class="flex items-center justify-end gap-3">
-            <a
+            <Link
               class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
-              href="/user/register"
+              to={"/user/register"}
             >
               Sign in
-            </a>
+            </Link>
             <a
               class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               href="/user/login"
@@ -86,3 +81,22 @@ export const Navbar = () => {
     //   );
   );
 };
+
+{
+  /* <div class="flex w-full p-8 border-b border-gray-300">
+					<span class="flex-shrink-0 w-12 h-12 bg-gray-400 rounded-full"></span>
+					<div class="flex flex-col flex-grow ml-4">
+						<div class="flex">
+							<span class="font-semibold">Username</span>
+							<span class="ml-1">@username</span>
+							<span class="ml-auto text-sm">Just now</span>
+						</div>
+						<p class="mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a class="underline" href="#">#hashtag</a></p>
+						<div class="flex mt-2">
+							<button class="text-sm font-semibold">Like</button>
+							<button class="ml-2 text-sm font-semibold">Reply</button>
+							<button class="ml-2 text-sm font-semibold">Share</button>
+						</div>
+					</div>
+				</div> */
+}
