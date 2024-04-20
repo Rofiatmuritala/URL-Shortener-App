@@ -30,12 +30,13 @@ import {
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import OnlyLoginUsersRoute from "./LoginUserRoute";
+import Logout from "./Logout";
 
 const LinkItems = [
   { name: "Create New", to: "/create" },
   { name: "Home", to: "/home", icon: FiHome },
   { name: "Links", to: "/link", icon: FiTrendingUp },
-  { name: "Logout", to: "/", icon: FiCompass },
+  // { name: "Logout", to: "/", icon: FiCompass },
   { name: "Settings", to: "/create", icon: FiSettings },
 ];
 
@@ -67,6 +68,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           {link.name}
         </NavItem>
       ))}
+      <Logout />
     </Box>
   );
 };
@@ -193,29 +195,29 @@ const Dashboard = ({ children }) => {
 
   return (
     <OnlyLoginUsersRoute>
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
-      <SidebarContent
-        onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
-      />
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        returnFocusOnClose={false}
-        onOverlayClick={onClose}
-        size="full"
-      >
-        <DrawerContent>
-          <SidebarContent onClose={onClose} />
-        </DrawerContent>
-      </Drawer>
-      {/* mobilenav */}
-      <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        <div className="mx-auto w-4/5">{children}</div>
+      <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+        <SidebarContent
+          onClose={() => onClose}
+          display={{ base: "none", md: "block" }}
+        />
+        <Drawer
+          isOpen={isOpen}
+          placement="left"
+          onClose={onClose}
+          returnFocusOnClose={false}
+          onOverlayClick={onClose}
+          size="full"
+        >
+          <DrawerContent>
+            <SidebarContent onClose={onClose} />
+          </DrawerContent>
+        </Drawer>
+        {/* mobilenav */}
+        <MobileNav onOpen={onOpen} />
+        <Box ml={{ base: 0, md: 60 }} p="4">
+          <div className="mx-auto w-4/5">{children}</div>
+        </Box>
       </Box>
-    </Box>
     </OnlyLoginUsersRoute>
   );
 };

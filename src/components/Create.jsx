@@ -15,6 +15,7 @@ export const CreateNew = () => {
       actualLink: actualLink,
     };
     console.log(newShortenedUrl);
+    const token = localStorage.getItem("token");
     try {
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_BASE_URL}/links`,
@@ -22,6 +23,7 @@ export const CreateNew = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(newShortenedUrl),
         }

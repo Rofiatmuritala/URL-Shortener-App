@@ -8,9 +8,7 @@ export const Links = () => {
 
   const getLinks = async (e) => {
     try {
-      const response = await fetch(
-        `http://localhost:4000/links`
-      );
+      const response = await fetch(`http://localhost:4000/links`);
       const data = await response.json();
       setLinkeds(data.links);
     } catch (error) {
@@ -45,9 +43,11 @@ export const Links = () => {
       {/* <div className="flex flex-col gap-10 text-xl bg-gray-300"> */}
       {linkeds !== null &&
         (linkeds.length === 0 ? (
-          <div className="flex flex-col p-10 text-2xl  bg-white rounded-md border-gray-100 border-solid justify-center items-center font-bold h-full
+          <div
+            className="flex flex-col p-10 text-2xl  bg-white rounded-md border-gray-100 border-solid justify-center items-center font-bold h-full
 
-          ">
+          "
+          >
             Links
           </div>
         ) : (
@@ -61,18 +61,21 @@ export const Links = () => {
                   </div>
 
                   <div className="flex flex-col flex-1 gap-3 ">
-                    <h3 href="google.com" className="text-xs md:text-2xl font-bold">
+                    <h3
+                      href="google.com"
+                      className="text-xs md:text-2xl font-bold"
+                    >
                       <a>{linked.name}</a>
                     </h3>
                     <div className="flex flex-row gap-10">
                       <div className="flex flex-col flex-1 gap-3">
-                        
                         <a
                           className="text-blue-500 font-bold text-xs cursor-pointer md:text-2xl"
                           href={linked.shortLink}
                           target="_blank"
-                        > 
-                          {linked.shortLink} <TbClipboardCopy className="inline-block text-black m-2 pb-2 cursor-pointer"/>
+                        >
+                          {linked.shortLink}{" "}
+                          <TbClipboardCopy className="inline-block text-black m-2 pb-2 cursor-pointer" />
                         </a>
                         <a
                           className="text-black text-xs bold cursor-pointer overflow-hidden break-all md:text-2xl"
@@ -81,11 +84,11 @@ export const Links = () => {
                           {linked.actualLink}
                         </a>
                         <div className="flex flex-row flex-wrap mt-2 mb-14 text-xl text-black font-medium gap-6">
-                          <div className="flex font-medium  rounded-lg  bg-slate-200  items-center">
+                          {/* <div className="flex font-medium  rounded-lg  bg-slate-200  items-center">
                             <span className="overflow-hidden  text-gray-600 text-xs font-medium md:text-xl  ">
                               clicks={linked.clicks}
                             </span>
-                          </div>
+                          </div>                          */}
                           <div className="flex flex-1 font-medium   items-center">
                             <span className="overflow-hidden break-all text-black text-xs bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl">
                               {linked.updatedAt}

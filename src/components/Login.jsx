@@ -20,7 +20,7 @@ export const Login = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/login`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/users/login`,
         {
           method: "POST",
           headers: {
@@ -108,9 +108,9 @@ export const Login = () => {
                 Login
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                Do not have an account?{" "}
+                Do not have an account?
                 <Link
-                  to={'user/register'}
+                  to={"/user/register"}
                   class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Register here
