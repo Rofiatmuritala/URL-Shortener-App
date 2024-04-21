@@ -8,7 +8,16 @@ export const Links = () => {
 
   const getLinks = async (e) => {
     try {
-      const response = await fetch(`http://localhost:4000/links`);
+      const response = await fetch(
+        `http://localhost:4000/links`,
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await response.json();
       setLinkeds(data.links);
     } catch (error) {

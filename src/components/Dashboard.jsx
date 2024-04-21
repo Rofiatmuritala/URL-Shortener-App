@@ -31,13 +31,15 @@ import {
 import { Link } from "react-router-dom";
 import OnlyLoginUsersRoute from "./LoginUserRoute";
 import Logout from "./Logout";
+import ColorModeToggle from "./Colortoggle";
+import { LogoutPage } from "../pages/LogoutPage";
 
 const LinkItems = [
   { name: "Create New", to: "/create" },
   { name: "Home", to: "/home", icon: FiHome },
   { name: "Links", to: "/link", icon: FiTrendingUp },
   // { name: "Logout", to: "/", icon: FiCompass },
-  { name: "Settings", to: "/create", icon: FiSettings },
+  // { name: "Settings", to: "/create", icon: FiSettings },
 ];
 
 const SidebarContent = ({ onClose, ...rest }) => {
@@ -68,7 +70,10 @@ const SidebarContent = ({ onClose, ...rest }) => {
           {link.name}
         </NavItem>
       ))}
-      <Logout />
+      <div>
+        <FiCompass className=" w-10 pl-5 justify-between inline-block" />
+        <Logout className="ml-5 text-xl " />
+      </div>
     </Box>
   );
 };
@@ -145,6 +150,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
+        <ColorModeToggle />
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton
@@ -165,9 +171,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">FullNme</Text>
                   <Text fontSize="xs" color="gray.600">
-                    User
+                    Username
                   </Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
@@ -181,7 +187,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
             >
               <MenuItem>Profile</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem>
+                <LogoutPage />
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

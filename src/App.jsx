@@ -26,6 +26,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/howitworks" element={<Howitworks />} />
           <Route path="/link" element={<LinkPage />} />
+          <Route path="/dashboard/home" element={<LandingPage />} />
           <Route path="/home" element={<LandingPage />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/contact" element={<Contact />} />

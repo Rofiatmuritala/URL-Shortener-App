@@ -36,7 +36,7 @@ export const Login = () => {
 
       if (data && data.token) {
         localStorage.setItem("token", data.token);
-        navigate("/dashboard");
+        navigate("/dashboard/home");
       }
     } catch (error) {
       console.log(error);
