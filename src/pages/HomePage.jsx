@@ -1,17 +1,19 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
 import Benefit from "../components/Benefit";
-import { WhyChooseUs } from "../components/WhyChooseUs";
-import { Hero2 } from "../components/Hero2";
+import { SlidingHome } from "../components/SlidingHome";
+import { HeroHome } from "../components/HeroHome";
 import { Footer } from "../components/Footer";
+import { CTA } from "../components/CTA";
 // import { Pricing } from "../components/Pricing";
 
 export const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <Hero2 />
-      <WhyChooseUs />
+      <CTA />
+      <HeroHome />
+      <SlidingHome />
       {/* <Pricing /> */}
       <Benefit />
       <Footer />

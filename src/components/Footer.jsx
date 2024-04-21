@@ -73,14 +73,7 @@ export const Footer = () => {
                         Make it short
                       </Link>
                     </li>
-                    <li>
-                      <a
-                        class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        to={"/user/register"}
-                      >
-                        Kialy Documentation API
-                      </a>
-                    </li>
+
                     <li>
                       <a
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
@@ -96,14 +89,6 @@ export const Footer = () => {
                     Other Resources
                   </span>
                   <ul class="list-unstyled">
-                    <li>
-                      <a
-                        class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
-                      >
-                        KIA License
-                      </a>
-                    </li>
                     <li>
                       <a
                         class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"

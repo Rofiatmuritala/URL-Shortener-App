@@ -4,21 +4,20 @@ import { Hero } from "./Hero";
 import { TrackWebsite } from "./TrackWebsite";
 import { TrackDevice } from "./TrackDevice";
 
-export const WhyChooseUs = () => {
+export const SlidingHome = () => {
   return (
     <div>
       {/* component  */}
       <div class="relative">
-        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-green-400">
+        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-gray-100">
           <Hero />
         </div>
-        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-teal-600 text-white">
+        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-gray-100 text-white">
           <TrackWebsite />
         </div>
-        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-gray-600 text-white">
+        <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-gray-100 text-white">
           <TrackDevice />
         </div>
-       
       </div>
       {/* <Heading lineHeight="tall">
         <Highlight

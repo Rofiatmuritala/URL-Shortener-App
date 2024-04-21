@@ -1,7 +1,7 @@
 import { Heading, Highlight } from "@chakra-ui/react";
 import React from "react";
 
-export const Hero2 = () => {
+export const HeroHome = () => {
   return (
     <div>
       {/* component  */}
@@ -16,7 +16,7 @@ export const Hero2 = () => {
               long URL with KIALY to get to help you with your next ads
             </p>
           </div>
-          <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
+          <div class="container mx-auto flex px-5 py-15 md:flex-row flex-col items-center">
             <div class="flex flex-col justify-center items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
               <img
                 class="rounded-lg shadow-xl"
@@ -29,15 +29,19 @@ export const Hero2 = () => {
                 Create-n-Shorten your long links
               </p>
               <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">
-              <Heading lineHeight="tall">
-        <Highlight
-          query={["Sharing"]}
-          styles={{ px: "2", py: "1", rounded: "full", bg: "gray.100" }}
-        >
-         Sharing Made Easy
-        </Highlight>
-      </Heading>
-                
+                <Heading lineHeight="tall">
+                  <Highlight
+                    query={["Sharing"]}
+                    styles={{
+                      px: "2",
+                      py: "1",
+                      rounded: "full",
+                      bg: "gray.100",
+                    }}
+                  >
+                    Sharing Made Easy
+                  </Highlight>
+                </Heading>
               </h3>
               <p class="mt-5 text-lg text-gray-600 text md:text-left">
                 Crafting your user experience has never been easier, with our
@@ -46,7 +50,7 @@ export const Hero2 = () => {
               </p>
             </div>
           </div>
-          <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
+          <div class="container mx-auto flex px-5 py-15 md:flex-row flex-col items-center">
             <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12">
               <img
                 class="rounded-lg shadow-xl"
@@ -68,7 +72,7 @@ export const Hero2 = () => {
               </p>
             </div>
           </div>
-          <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
+          <div class="container mx-auto flex px-5 py-15 md:flex-row flex-col items-center">
             <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
               <img
                 class="rounded-lg shadow-xl"

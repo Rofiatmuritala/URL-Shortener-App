@@ -14,6 +14,7 @@ import { LandingPage } from "./pages/LandingPage";
 import { LogoutPage } from "./pages/LogoutPage";
 import { Pricing } from "./components/Pricing";
 import Contact from "./components/Contact";
+import { Howitworks } from "./components/Howitworks";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/howitworks" element={<Howitworks />} />
           <Route path="/link" element={<LinkPage />} />
           <Route path="/home" element={<LandingPage />} />
           <Route path="/create" element={<CreatePage />} />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Navbar } from "./Navbar";
 
 export const Login = () => {
   const [email, setEmail] = useState(null);
@@ -44,10 +45,11 @@ export const Login = () => {
 
   return (
     <section class="">
-      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <Navbar />
+      <div class="flex flex-col items-center justify-center mt-15 px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
           href="#"
-          class="flex items-center mb-6 text-4xl font-semibold text-pink-500 dark:text-white"
+          class="flex items-center mb-6 text-4xl font-semibold text-teal-500 dark:text-white"
         >
           {/* <img
             class="w-8 h-8 mr-2"
@@ -103,7 +105,7 @@ export const Login = () => {
 
               <button
                 type="submit"
-                class="w-full text-white bg-pink-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                class="w-full text-white bg-teal-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Login
               </button>
