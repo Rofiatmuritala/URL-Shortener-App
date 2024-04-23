@@ -10,8 +10,11 @@ export const CTA = () => {
             <h1 class="text-4xl text-teal-500 lg:text-5xl pb-4 xl:text-6xl font-bold leading-none">
               Features
             </h1>
-            <h1 class="text-6xl lg:text-5xl xl:text-6xl font-bold leading-none">
-              Campaign Monitoring & Analytics{" "}
+            <h1 class="text-6xl lg:text-5xl xl:text-6xl font-bold leading-none capitalize mb-1">
+              Get higher ROI{" "}
+            </h1>
+            <h1 class="text-6xl lg:text-5xl xl:text-6xl font-bold leading-none capitalize">
+              from your Ads{" "}
             </h1>
             <p class="text-xl lg:text-2xl mt-6 pb-4 font-light">
               Learn from your links, and build better digital campaigns.

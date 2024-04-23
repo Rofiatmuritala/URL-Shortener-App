@@ -37,7 +37,7 @@ import { LogoutPage } from "../pages/LogoutPage";
 const LinkItems = [
   { name: "Create New", to: "/create" },
   { name: "Home", to: "/home", icon: FiHome },
-  { name: "Links", to: "/link", icon: FiTrendingUp },
+  { name: "Links", to: "/dashboard/links", icon: FiTrendingUp },
   // { name: "Logout", to: "/", icon: FiCompass },
   // { name: "Settings", to: "/create", icon: FiSettings },
 ];
