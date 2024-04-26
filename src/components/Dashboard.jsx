@@ -61,7 +61,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           fontWeight="bold"
           color="teal"
         >
-          Kia.ly
+          Bref
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -140,7 +140,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         fontWeight="bold"
         color="teal"
       >
-        kia.ly
+        Bref
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>

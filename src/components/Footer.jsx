@@ -128,7 +128,7 @@ export const Footer = () => {
                   class="text-blueGray-500 hover:text-gray-800"
                   target="_blank"
                 />{" "}
-                KIAly by
+                Bref by <br />
                 <a
                   href="https://www.creative-tim.com?ref=njs-profile"
                   class="text-blueGray-500 hover:text-blueGray-800"

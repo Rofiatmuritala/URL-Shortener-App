@@ -23,7 +23,7 @@ export const Register = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:4000/api/users/register`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_BASE_URL}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,17 +46,13 @@ export const Register = () => {
     <section class="">
       <Navbar />
       <div class="flex flex-col items-center mt-20 justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a
+        {/* <a
           href="#"
           class="flex items-center mb-6 text-4xl font-semibold text-teal-500 dark:text-white"
         >
-          {/* <img
-            class="w-8 h-8 mr-2"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-            alt="logo"
-          /> */}
+        
           kia.ly
-        </a>
+        </a> */}
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">

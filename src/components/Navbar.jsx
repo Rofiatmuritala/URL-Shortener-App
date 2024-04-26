@@ -9,7 +9,7 @@ export const Navbar = () => {
         <div class="flex items-center justify-between">
           <div class="flex shrink-0">
             <Link aria-current="page" class="flex items-center" to={"/"}>
-              <h1 className="text-teal-500 text-4xl">Kia.ly</h1>
+              <h1 className="text-teal-500 text-4xl">Bref</h1>
               {/* <img
                 class="h-7 w-auto"
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
