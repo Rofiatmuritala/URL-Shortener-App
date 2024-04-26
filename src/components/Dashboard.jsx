@@ -33,6 +33,7 @@ import OnlyLoginUsersRoute from "./LoginUserRoute";
 import Logout from "./Logout";
 import ColorModeToggle from "./Colortoggle";
 import { LogoutPage } from "../pages/LogoutPage";
+import { useEffect, useState } from "react";
 
 const LinkItems = [
   { name: "Create New", to: "/create" },
@@ -113,6 +114,32 @@ const NavItem = ({ icon, to, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const [users, setUsers] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  //   const navigate = useNavigate();
+
+  const getUsers = async () => {
+    try {
+      // setLoading(true);
+      //   console.log(`${process.env.BACKEND_URI}/product`);
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/register`
+      );
+      const data = await response.json();
+      console.log(data);
+      setUsers(data);
+
+      //   console.log(first)
+
+      // setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getUsers();
+  useEffect(() => {}, []);
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -171,10 +198,18 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">FullNme</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Username
-                  </Text>
+                  {" "}
+                  {users !== null &&
+                    users.map((user) => {
+                      <>
+                        <div>
+                          <Text fontSize="sm">{user.fullName}</Text>
+                        </div>
+                        <Text fontSize="xs" color="gray.600">
+                          {user.userName}
+                        </Text>
+                      </>;
+                    })}
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
