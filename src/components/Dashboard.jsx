@@ -114,31 +114,32 @@ const NavItem = ({ icon, to, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
-  const [users, setUsers] = useState(null);
-  // const [loading, setLoading] = useState(false);
-  //   const navigate = useNavigate();
+  const [authUser, setAuthUser] = useState(null);
 
-  const getUsers = async () => {
+  const token = localStorage.getItem("token");
+
+  const getAuthUser = async () => {
     try {
-      // setLoading(true);
-      //   console.log(`${process.env.BACKEND_URI}/product`);
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/register`
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/me`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       const data = await response.json();
-      console.log(data.users);
-      setUsers(data.users);
 
-      //   console.log(first)
-
-      // setLoading(false);
+      setAuthUser(data.user);
     } catch (error) {
       console.log(error);
     }
   };
 
-  getUsers();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getAuthUser();
+  }, []);
 
   return (
     <Flex
@@ -198,17 +199,16 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  {users !== null &&
-                    users.map((user) => {
-                      <>
-                        <div>
-                          <Text fontSize="sm">{user.fullName}</Text>
-                        </div>
-                        <Text fontSize="xs" color="gray.600">
-                          {user.userName}
-                        </Text>
-                      </>;
-                    })}
+                  {authUser !== null && (
+                    <>
+                      <div>
+                        <Text fontSize="sm">{authUser.fullName}</Text>
+                      </div>
+                      <Text fontSize="xs" color="gray.600">
+                        {authUser.userName}
+                      </Text>
+                    </>
+                  )}
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
