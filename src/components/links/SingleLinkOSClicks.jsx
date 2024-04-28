@@ -32,7 +32,7 @@ export default function SingleLinkOSClicks({ clicks }) {
   });
 
   const osData = {
-    labels: ["Windows", "Mac", "Android"],
+    labels: ["Windows", "Mac", "Android", "iOS"],
     datasets: [
       {
         label: "Clicks",
