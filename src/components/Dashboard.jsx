@@ -126,8 +126,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
         `${import.meta.env.VITE_BACKEND_BASE_URL}/users/register`
       );
       const data = await response.json();
-      console.log(data);
-      setUsers(data);
+      console.log(data.users);
+      setUsers(data.users);
 
       //   console.log(first)
 
@@ -198,7 +198,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  {" "}
                   {users !== null &&
                     users.map((user) => {
                       <>

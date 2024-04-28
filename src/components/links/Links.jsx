@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { TbClipboardCopy } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import DeleteSingleLink from "./DeleteSingleLink";
 
 export const Links = () => {
   const [links, setLinks] = useState(null);
@@ -90,7 +91,6 @@ export const Links = () => {
                               target="_blank"
                             >
                               {link.shortLink}{" "}
-                              <TbClipboardCopy className="inline-block text-black m-2 pb-2 cursor-pointer" />
                             </a>
                             {/* <a
                               className="text-black text-xs bold cursor-pointer overflow-hidden break-all md:text-2xl"
@@ -108,12 +108,17 @@ export const Links = () => {
                                 <span className="overflow-hidden break-all text-black text-xs bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl">
                                   {link.updatedAt.split("T")[0]}
                                 </span>
+                                <span className="overflow-hidden break-all text-black ml-4  bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl ">
+                                  {" "}
+                                  Copy
+                                  {/* <TbClipboardCopy className="inline-block text-black m-2 pb-2 cursor-pointer" /> */}
+                                </span>
+                                <span className="overflow-hidden break-all text-white ml-4  bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl ">
+                                  <DeleteSingleLink linkId={link.shortCode} />
+                                </span>
                               </div>
-                              {/* <div className="flex font-medium text-xl text-black items-center">
-                            <span className="overflow-hidden break-all text-black text-xl font-medium max-w-3xl">
-                              Location
-                            </span>
-                          </div> */}
+                              {/* <div className="flex font-medium items-center">
+                              </div> */}
                             </div>
                           </div>
                         </div>

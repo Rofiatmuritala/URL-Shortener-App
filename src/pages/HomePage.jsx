@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
-import Benefit from "../components/Benefit";
-import { SlidingHome } from "../components/SlidingHome";
+// import Benefit from "../components/Benefit";
+// import { SlidingHome } from "../components/SlidingHome";
 import { HeroHome } from "../components/HeroHome";
 import { Footer } from "../components/Footer";
 import { CTA } from "../components/CTA";
@@ -13,9 +13,9 @@ export const HomePage = () => {
       <Navbar />
       <CTA />
       <HeroHome />
-      <SlidingHome />
+      {/* <SlidingHome /> */}
       {/* <Pricing /> */}
-      <Benefit />
+      {/* <Benefit /> */}
       <Footer />
     </div>
   );
