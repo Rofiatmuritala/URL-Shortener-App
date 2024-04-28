@@ -5,14 +5,17 @@ import { useState } from "react";
 import { TbClipboardCopy } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import DeleteSingleLink from "./DeleteSingleLink";
+import Loading from "../Loading";
 
 export const Links = () => {
   const [links, setLinks] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const token = localStorage.getItem("token");
 
   const getLinks = async (e) => {
     try {
+      setIsLoading(true);
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_BASE_URL}/links`,
 
@@ -25,6 +28,7 @@ export const Links = () => {
       );
       const data = await response.json();
       setLinks(data.links);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -130,6 +134,7 @@ export const Links = () => {
             ))}
           </div>
         ))}
+      {isLoading === true && <Loading />}
       {/* </div> */}
     </>
   );
