@@ -2,12 +2,11 @@ import React from "react";
 import { MdDelete } from "react-icons/md";
 
 export default function DeleteSingleLink({ linkId }) {
-  console.log(localStorage.getItem("token"));
   const onDeleteHandler = async (event) => {
     event.preventDefault(); // Prevent page reload
 
     try {
-      await fetch(`http://localhost:4000/api/links/${linkId}`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_BASE_URL}/links/${linkId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
