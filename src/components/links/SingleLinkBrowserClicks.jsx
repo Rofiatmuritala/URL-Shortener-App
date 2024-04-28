@@ -12,10 +12,10 @@ import { Pie } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function SingleLinkBrowserClicks({ browserDataClicks }) {
-  console.log(browserDataClicks[0]);
-
   const chromeClicks = browserDataClicks.filter((browser) => {
-    const clicks = browser.client.name === "Chrome";
+    const clicks =
+      browser.client.name === "Chrome" ||
+      browser.client.name === "Chrome Mobile";
     return clicks;
   });
 
@@ -76,7 +76,10 @@ export default function SingleLinkBrowserClicks({ browserDataClicks }) {
           <StatNumber>{chromeClicks.length}</StatNumber>
           <StatHelpText>
             <StatArrow type="increase" />
-            23.36%
+            {((chromeClicks.length / browserDataClicks.length) * 100).toFixed(
+              2
+            )}
+            %
           </StatHelpText>
         </Stat>
 
@@ -91,7 +94,7 @@ export default function SingleLinkBrowserClicks({ browserDataClicks }) {
           <StatNumber>{edgeClicks.length}</StatNumber>
           <StatHelpText>
             <StatArrow type="increase" />
-            23.36%
+            {((edgeClicks.length / browserDataClicks.length) * 100).toFixed(2)}%
           </StatHelpText>
         </Stat>
 
@@ -106,7 +109,10 @@ export default function SingleLinkBrowserClicks({ browserDataClicks }) {
           <StatNumber>{firefoxClicks.length}</StatNumber>
           <StatHelpText>
             <StatArrow type="increase" />
-            23.36%
+            {((firefoxClicks.length / browserDataClicks.length) * 100).toFixed(
+              2
+            )}
+            %
           </StatHelpText>
         </Stat>
 
@@ -121,7 +127,10 @@ export default function SingleLinkBrowserClicks({ browserDataClicks }) {
           <StatNumber>{safariClicks.length}</StatNumber>
           <StatHelpText>
             <StatArrow type="increase" />
-            23.36%
+            {((safariClicks.length / browserDataClicks.length) * 100).toFixed(
+              2
+            )}
+            %
           </StatHelpText>
         </Stat>
       </StatGroup>

@@ -9,13 +9,17 @@ import {
 } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
-import SingleLinkBrowserClicks from "../../pages/dashboard/links/SingleLinkBrowserClicks";
+import SingleLinkBrowserClicks from "./SingleLinkBrowserClicks";
+import SingleLinkOSClicks from "./SingleLinkOSClicks";
+import SingleLinkDeviceClicks from "./SingleLinkDeviceClicks";
 
 export default function SingleLink({ singleLink }) {
   const browserDataClicks = singleLink.link.clicks.filter((click) => {
     const clicks = click.client.type === "browser";
     return clicks;
   });
+
+  const clicks = singleLink.link.clicks;
 
   return (
     <>
@@ -48,10 +52,10 @@ export default function SingleLink({ singleLink }) {
                 />
               </TabPanel>
               <TabPanel>
-                <p>two!</p>
+                <SingleLinkOSClicks clicks={clicks} />
               </TabPanel>
               <TabPanel>
-                <p>three!</p>
+                <SingleLinkDeviceClicks clicks={clicks} />
               </TabPanel>
             </TabPanels>
           </Tabs>
