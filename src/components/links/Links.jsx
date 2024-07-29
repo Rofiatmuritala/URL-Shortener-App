@@ -6,6 +6,8 @@ import { TbClipboardCopy } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import DeleteSingleLink from "./DeleteSingleLink";
 import Loading from "../Loading";
+import EditSingleLink from "./EditSingleLink";
+import { BiPencil } from "react-icons/bi";
 
 export const Links = () => {
   const [links, setLinks] = useState(null);
@@ -119,6 +121,13 @@ export const Links = () => {
                                 </span>
                                 <span className="overflow-hidden break-all text-white ml-4  bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl ">
                                   <DeleteSingleLink linkId={link.shortCode} />
+                                </span>
+                                <span className="overflow-hidden break-all text-white ml-4  bg-gray-300 rounded-lg p-2 font-medium max-w-3xl md:text-xl ">
+                                  <Link
+                                    to={`/dashboard/links/${link.shortCode}/edit`}
+                                  >
+                                    <BiPencil />
+                                  </Link>
                                 </span>
                               </div>
                               {/* <div className="flex font-medium items-center">

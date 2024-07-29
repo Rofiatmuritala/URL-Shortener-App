@@ -16,6 +16,7 @@ import { Pricing } from "./components/Pricing";
 import Contact from "./components/Contact";
 import { Howitworks } from "./components/Howitworks";
 import SingleLinkPage from "./pages/dashboard/links/SingleLinkPage";
+import EditSingleLink from "./components/links/EditSingleLink";
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
           <Route
             path="/dashboard/links/:shortCode"
             element={<SingleLinkPage />}
+          />
+          <Route
+            path="/dashboard/links/:shortCode/edit"
+            element={<EditSingleLink />}
           />
         </Routes>
       </BrowserRouter>

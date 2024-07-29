@@ -1,13 +1,46 @@
 import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Loading from "./Loading";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-export const CreateNew = () => {
+const EditSingleLink = () => {
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const [name, setName] = useState(null);
   const [actualLink, setActualLink] = useState(null);
   const [shortLink, setShortLink] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const token = localStorage.getItem("token");
+
+  const getSingleLink = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/links/${params.shortCode}`,
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const data = await response.json();
+
+      console.log(data);
+
+      setActualLink(data.link.actualLink);
+      setName(data.link.name);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getSingleLink();
+  }, [params.shortCode]);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -23,9 +56,9 @@ export const CreateNew = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_BASE_URL}/links`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/links/${params.shortCode}`,
         {
-          method: "POST",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -36,12 +69,15 @@ export const CreateNew = () => {
 
       const data = await response.json();
 
-      setShortLink(data.link.shortLink);
-      setIsLoading(false);
+      if (data) {
+        return navigate("/dashboard/links");
+      }
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(actualLink);
 
   return (
     <Card>
@@ -52,7 +88,7 @@ export const CreateNew = () => {
               <>
                 {" "}
                 <CardHeader>
-                  <Heading size="lg">Create Short Link</Heading>
+                  <Heading size="lg">Edit Link</Heading>
                 </CardHeader>
                 <form onSubmit={onSubmitHandler}>
                   <label
@@ -65,9 +101,10 @@ export const CreateNew = () => {
                     type="text"
                     id="text"
                     aria-describedby="helper-text-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="https://example.com/dr5GH8"
                     onChange={(e) => setActualLink(e.target.value)}
+                    value={actualLink}
                   />
 
                   <p
@@ -87,9 +124,10 @@ export const CreateNew = () => {
                     type="text"
                     id="text"
                     aria-describedby="helper-text-explanation"
-                    class=" mb-4 bg-gray-50 border border-gray-300 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder=""
                     onChange={(e) => setName(e.target.value)}
+                    value={name}
                   />
 
                   <div class="jusify-between  ">
@@ -117,7 +155,7 @@ export const CreateNew = () => {
               </>
             )}
 
-            {isLoading === true && <Loading />}
+            {isLoading === true}
           </>
         ) : (
           <div>
@@ -135,3 +173,5 @@ export const CreateNew = () => {
     </Card>
   );
 };
+
+export default EditSingleLink;

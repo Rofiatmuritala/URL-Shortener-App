@@ -40,7 +40,7 @@ const LinkItems = [
   { name: "Home", to: "/home", icon: FiHome },
   { name: "Links", to: "/dashboard/links", icon: FiTrendingUp },
   // { name: "Logout", to: "/", icon: FiCompass },
-  // { name: "Settings", to: "/create", icon: FiSettings },
+  { name: "Settings", to: "/create", icon: FiSettings },
 ];
 
 const SidebarContent = ({ onClose, ...rest }) => {
@@ -72,8 +72,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </NavItem>
       ))}
       <div>
-        <FiCompass className=" w-10 pl-5 justify-between inline-block" />
-        <Logout className="ml-5 text-xl " />
+        <FiCompass className="mx-3 w-10  pl-5 justify-between inline-block" />
+        <Logout className="mt-3 text-xl " />
       </div>
     </Box>
   );
